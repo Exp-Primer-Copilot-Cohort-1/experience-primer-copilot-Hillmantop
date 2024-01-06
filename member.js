@@ -1,15 +1,11 @@
 function skillsMember() {
-  return {
-    restrict: 'E',
-    templateUrl: 'views/skills-member.html',
-    scope: {
-      member: '=',
-      skills: '='
-    },
-    controller: function($scope) {
-      $scope.getSkill = function(skillId) {
-        return _.find($scope.skills, {id: skillId});
-      };
+    var member = document.getElementById("member");
+    var memberValue = member.options[member.selectedIndex].value;
+    if (memberValue == "Yes") {
+        document.getElementById("skills").style.display = "block";
     }
-  };
+    else {
+        document.getElementById("skills").style.display = "none";
+    }
 }
+
